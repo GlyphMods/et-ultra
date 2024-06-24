@@ -1,0 +1,11 @@
+{
+  "type": "etultra:asteroids",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "etultra:asteroids"
+    },
+    "settings": "ad_astra:orbit"
+  }
+}

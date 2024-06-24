@@ -1,0 +1,47 @@
+{
+  "type": "etultra:asteroid",
+  "config": {
+    "block_settings": {
+      "indicator": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:cobblestone"
+        }
+      },
+      "inner_core": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:raw_gold_block"
+        }
+      },
+      "inner_shell": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:andesite"
+        }
+      },
+      "outer_core": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:gold_ore"
+        }
+      },
+      "outer_shell": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:andesite"
+        }
+      }
+    },
+    "radius": {
+      "type": "minecraft:biased_to_bottom",
+      "value": {
+        "max_inclusive": 20,
+        "min_inclusive": 14
+      }
+    },
+    "target": {
+      "type": "minecraft:true"
+    }
+  }
+}

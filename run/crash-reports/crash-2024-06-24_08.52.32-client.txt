@@ -1,0 +1,199 @@
+---- Minecraft Crash Report ----
+// Oops.
+
+Time: 2024-06-24 08:52:32
+Description: Unexpected error
+
+java.lang.NullPointerException: Cannot invoke "net.minecraft.world.level.Level.holderLookup(net.minecraft.resources.ResourceKey)" because "worldIn" is null
+	at com.simibubi.create.content.equipment.zapper.ZapperItem.appendHoverText(ZapperItem.java:63) ~[create-1.20.1-0.5.1.f-27-slim.jar%23205!/:0.5.1.f-27] {re:classloading}
+	at net.minecraft.world.item.ItemStack.getTooltipLines(ItemStack.java:631) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,xf:fml:forge:itemstack,pl:unprotect:A,re:classloading,xf:fml:forge:itemstack,pl:mixin:APP:emi.mixins.json:ItemStackMixin,pl:mixin:APP:kubejs-common.mixins.json:ItemStackMixin,pl:mixin:A,pl:unprotect:A}
+	at snownee.jade.addon.vanilla.ItemTooltipProvider.appendTooltip(ItemTooltipProvider.java:43) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at snownee.jade.impl.EntityAccessorClientHandler.gatherComponents(EntityAccessorClientHandler.java:81) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at snownee.jade.impl.EntityAccessorClientHandler.gatherComponents(EntityAccessorClientHandler.java:26) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at snownee.jade.overlay.WailaTickHandler.tickClient(WailaTickHandler.java:177) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at snownee.jade.util.ClientProxy.onClientTick(ClientProxy.java:170) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%23102!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%23102!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23102!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23102!/:?] {}
+	at net.minecraftforge.event.ForgeEventFactory.onPostClientTick(ForgeEventFactory.java:940) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23188%23195!/:?] {re:classloading}
+	at net.minecraft.client.Minecraft.tick(Minecraft.java:1875) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:flywheel.mixins.json:PausedPartialTickAccessor,pl:mixin:APP:create.mixins.json:client.WindowResizeMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1112) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:flywheel.mixins.json:PausedPartialTickAccessor,pl:mixin:APP:create.mixins.json:client.WindowResizeMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:718) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:flywheel.mixins.json:PausedPartialTickAccessor,pl:mixin:APP:create.mixins.json:client.WindowResizeMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:flywheel.mixins.json:ClientMainMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.1.jar%2399!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.3.1.jar%2399!/:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.3.1.jar%2399!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.3.1.jar%2399!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[?:?] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar%23187!/:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Suspected Mods: 
+	Create (create), Version: 0.5.1.f-27
+		Issue tracker URL: https://github.com/Creators-of-Create/Create/issues
+		at TRANSFORMER/create@0.5.1.f-27/com.simibubi.create.content.equipment.zapper.ZapperItem.appendHoverText(ZapperItem.java:63)
+
+	Jade (jade), Version: 11.9.3+forge
+		at TRANSFORMER/jade@11.9.3+forge/snownee.jade.addon.vanilla.ItemTooltipProvider.appendTooltip(ItemTooltipProvider.java:43)
+Stacktrace:
+	at com.simibubi.create.content.equipment.zapper.ZapperItem.appendHoverText(ZapperItem.java:63) ~[create-1.20.1-0.5.1.f-27-slim.jar%23205!/:0.5.1.f-27] {re:classloading}
+	at net.minecraft.world.item.ItemStack.getTooltipLines(ItemStack.java:631) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,xf:fml:forge:itemstack,pl:unprotect:A,re:classloading,xf:fml:forge:itemstack,pl:mixin:APP:emi.mixins.json:ItemStackMixin,pl:mixin:APP:kubejs-common.mixins.json:ItemStackMixin,pl:mixin:A,pl:unprotect:A}
+	at snownee.jade.addon.vanilla.ItemTooltipProvider.appendTooltip(ItemTooltipProvider.java:43) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at snownee.jade.impl.EntityAccessorClientHandler.gatherComponents(EntityAccessorClientHandler.java:81) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at snownee.jade.impl.EntityAccessorClientHandler.gatherComponents(EntityAccessorClientHandler.java:26) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at snownee.jade.overlay.WailaTickHandler.tickClient(WailaTickHandler.java:177) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at snownee.jade.util.ClientProxy.onClientTick(ClientProxy.java:170) ~[jade-NruPjXIH.jar%23201!/:11.9.3+forge] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%23102!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%23102!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23102!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23102!/:?] {}
+	at net.minecraftforge.event.ForgeEventFactory.onPostClientTick(ForgeEventFactory.java:940) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23188%23195!/:?] {re:classloading}
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['Dev'/211, l='ClientLevel', x=-341.72, y=114.61, z=43419.67]]
+	Chunk stats: 961, 674
+	Level dimension: etultra:asteroids
+	Level spawn location: World: (96,64,608), Section: (at 0,0,0 in 6,4,38; chunk contains blocks 96,-64,608 to 111,319,623), Region: (0,1; contains chunks 0,32 to 31,63, blocks 0,-64,512 to 511,319,1023)
+	Level time: 39876 game time, 10860 day time
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:455) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:architectury.mixins.json:MixinClientLevel,pl:mixin:APP:kubejs-common.mixins.json:ClientLevelMixin,pl:mixin:APP:flywheel.mixins.json:ClientLevelMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2319) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:flywheel.mixins.json:PausedPartialTickAccessor,pl:mixin:APP:create.mixins.json:client.WindowResizeMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:740) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,pl:accesstransformer:B,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:emi.mixins.json:MinecraftClientMixin,pl:mixin:APP:architectury.mixins.json:MixinMinecraft,pl:mixin:APP:kubejs-common.mixins.json:MinecraftClientMixin,pl:mixin:APP:flywheel.mixins.json:PausedPartialTickAccessor,pl:mixin:APP:create.mixins.json:client.WindowResizeMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:218) ~[forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.20.1-loom.mappings.1_20_1.layered+hash.1211002187-v2-forge-1.20.1-47.3.1.jar%23189!/:?] {re:mixin,pl:unprotect:A,pl:runtimedistcleaner:A,re:classloading,pl:mixin:APP:flywheel.mixins.json:ClientMainMixin,pl:mixin:A,pl:unprotect:A,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:111) ~[fmlloader-1.20.1-47.3.1.jar%2399!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:99) ~[fmlloader-1.20.1-47.3.1.jar%2399!/:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.devService(ForgeClientUserdevLaunchHandler.java:19) ~[fmlloader-1.20.1-47.3.1.jar%2399!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonDevLaunchHandler.lambda$makeService$7(CommonDevLaunchHandler.java:135) ~[fmlloader-1.20.1-47.3.1.jar%2399!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:108) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:78) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) ~[modlauncher-10.0.9.jar%23103!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:141) ~[?:?] {}
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar%23187!/:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources, KubeJS Resource Pack [assets]
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Linux (amd64) version 6.9.2-artix1-1
+	Java Version: 17.0.9, JetBrains s.r.o.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), JetBrains s.r.o.
+	Memory: 816113216 bytes (778 MiB) / 3061841920 bytes (2920 MiB) up to 4162846720 bytes (3970 MiB)
+	CPUs: 4
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
+	Identifier: Intel64 Family 6 Model 94 Stepping 3
+	Microarchitecture: Skylake (Client)
+	Frequency (GHz): 3.20
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 4
+	Graphics card #0 name: HD Graphics 530
+	Graphics card #0 vendor: Intel Corporation (0x8086)
+	Graphics card #0 VRAM (MB): 256.00
+	Graphics card #0 deviceId: 0x1912
+	Graphics card #0 versionInfo: unknown
+	Graphics card #1 name: GM107 [GeForce GTX 750 Ti]
+	Graphics card #1 vendor: NVIDIA Corporation (0x10de)
+	Graphics card #1 VRAM (MB): 288.00
+	Graphics card #1 deviceId: 0x1380
+	Graphics card #1 versionInfo: unknown
+	Virtual memory max (MB): 11752.48
+	Virtual memory used (MB): 11370.93
+	Swap memory total (MB): 3815.00
+	Swap memory used (MB): 0.00
+	JVM Flags: 1 total; -XX:+AllowEnhancedClassRedefinition
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.3.1 build 7
+	Backend API: NVIDIA GeForce GTX 750 Ti/PCIe/SSE2 GL version 4.6.0 NVIDIA 550.78, NVIDIA Corporation
+	Window size: 1920x1038
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: en_us
+	CPU: 4x Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/211, l='ServerLevel[New World]', x=-341.72, y=114.61, z=43419.67]]
+	Data Packs: vanilla, mod:emi (incompatible), mod:mixinextras (incompatible), mod:rhino (incompatible), mod:resourcefullib (incompatible), mod:jade (incompatible), mod:architectury (incompatible), mod:botarium (incompatible), mod:jei, mod:kubejs (incompatible), mod:resourcefulconfig (incompatible), mod:forge, mod:etultra (incompatible), mod:curios (incompatible), mod:flywheel, mod:create, mod:ad_astra (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Experimental
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-patched-0.8.5.10.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.1.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.1.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.1.jar runtime_enum_extender PLUGINSERVICE 
+		unprotect-1.2.0.jar unprotect PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.1.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.3.1.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar ArchitecturyMixinRemapperInjector TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		emi-forge-1.1.7+1.20.1.jar                        |EMI                           |emi                           |1.1.7+1.20.1+forge  |DONE      |Manifest: NOSIGNATURE
+		forge-1.20.1-47.3.1-minecraft-merged-19039ac01b-1.|Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: NOSIGNATURE
+		mixinextras-forge-0.3.5.jar                       |MixinExtras                   |mixinextras                   |0.3.5               |DONE      |Manifest: NOSIGNATURE
+		rhino-forge-2001.2.2-build.17.jar                 |Rhino                         |rhino                         |2001.2.2-build.17   |DONE      |Manifest: NOSIGNATURE
+		resourcefullib-forge-1.20.1-2.1.25.jar            |Resourceful Lib               |resourcefullib                |2.1.25              |DONE      |Manifest: NOSIGNATURE
+		jade-NruPjXIH.jar                                 |Jade                          |jade                          |11.9.3+forge        |DONE      |Manifest: NOSIGNATURE
+		architectury-forge-9.1.12.jar                     |Architectury                  |architectury                  |9.1.12              |DONE      |Manifest: NOSIGNATURE
+		botarium-forge-1.20.1-2.3.3.jar                   |Botarium                      |botarium                      |2.3.3               |DONE      |Manifest: NOSIGNATURE
+		jei-1.20.1-forge-15.2.0.27.jar                    |Just Enough Items             |jei                           |15.2.0.27           |DONE      |Manifest: NOSIGNATURE
+		kubejs-forge-2001.6.5-build.2.jar                 |KubeJS                        |kubejs                        |2001.6.5-build.2    |DONE      |Manifest: NOSIGNATURE
+		resourcefulconfig-forge-1.20.1-2.1.2.jar          |Resourcefulconfig             |resourcefulconfig             |2.1.2               |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |47.3.1              |DONE      |Manifest: NOSIGNATURE
+		main                                              |Ad Astra Et Ultra             |etultra                       |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		curios-forge-5.9.1+1.20.1.jar                     |Curios API                    |curios                        |5.9.1+1.20.1        |DONE      |Manifest: NOSIGNATURE
+		flywheel-forge-1.20.1-0.6.10-7.jar                |Flywheel                      |flywheel                      |0.6.10-7            |DONE      |Manifest: NOSIGNATURE
+		create-1.20.1-0.5.1.f-27-slim.jar                 |Create                        |create                        |0.5.1.f-27          |DONE      |Manifest: NOSIGNATURE
+		ad_astra-forge-1.20.1-1.15.18.jar                 |Ad Astra                      |ad_astra                      |1.15.18             |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: f217213d-b19c-47ac-9cb4-f3b97a520ee5
+	FML: 47.3
+	Forge: net.minecraftforge:47.3.1
+	Flywheel Backend: GL33 Instanced Arrays
