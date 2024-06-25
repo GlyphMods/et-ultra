@@ -2,12 +2,10 @@ package martian.etultra.data.recipe;
 
 import earth.terrarium.adastra.common.registry.ModItems;
 import martian.etultra.EtUltraContent;
-import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
