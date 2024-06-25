@@ -73,6 +73,10 @@ public class ItemOxygenDrill extends Item implements BotariumFluidItem<WrappedIt
         if (!level.isInWorldBounds(blockHit.getBlockPos()))
             return;
 
+        var state = level.getBlockState(blockHit.getBlockPos());
+        if (state.getDestroySpeed(level, blockHit.getBlockPos()) < 0)
+            return;
+
         if (!level.isClientSide)
             level.destroyBlock(blockHit.getBlockPos(), true, entity);
 
