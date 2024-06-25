@@ -24,7 +24,7 @@ import java.util.function.BiConsumer;
 
 import static martian.etultra.EtUltra.id;
 
-public class PlanetProvider {
+public class ModPlanetProvider {
     public final ModProvider<Planet> planetProvider;
     public final ModProvider<PlanetRenderer> planetRendererProvider;
 
@@ -48,7 +48,7 @@ public class PlanetProvider {
             .build();
 
 
-    public PlanetProvider(PackOutput output) {
+    public ModPlanetProvider(PackOutput output) {
         planetProvider = new ModProvider<>(
                 "Planets",
                 output.createPathProvider(PackOutput.Target.DATA_PACK, "planets"),

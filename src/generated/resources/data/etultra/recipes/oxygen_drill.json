@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "tag": "forge:storage_blocks/iron"
+    },
+    "I": {
+      "tag": "forge:ingots/iron"
+    },
+    "P": {
+      "tag": "forge:plates/iron"
+    },
+    "T": {
+      "item": "ad_astra:gas_tank"
+    }
+  },
+  "pattern": [
+    " PI",
+    "PTP",
+    "BP "
+  ],
+  "result": {
+    "item": "etultra:oxygen_drill"
+  },
+  "show_notification": true
+}

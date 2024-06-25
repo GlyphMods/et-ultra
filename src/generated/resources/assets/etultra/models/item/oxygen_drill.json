@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/handheld",
+  "overrides": [
+    {
+      "model": "etultra:item/oxygen_drill_active",
+      "predicate": {
+        "etultra:active": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "etultra:item/oxygen_drill"
+  }
+}

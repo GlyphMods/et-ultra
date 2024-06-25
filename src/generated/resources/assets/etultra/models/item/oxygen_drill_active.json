@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "etultra:item/oxygen_drill_active"
+  }
+}

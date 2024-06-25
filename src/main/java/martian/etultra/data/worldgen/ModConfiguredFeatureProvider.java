@@ -1,6 +1,6 @@
 package martian.etultra.data.worldgen;
 
-import martian.etultra.EtUltra;
+import martian.etultra.EtUltraContent;
 import martian.etultra.common.worldgen.AsteroidConfiguration;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 
 import static martian.etultra.EtUltra.id;
 
-public class AsteroidConfiguredFeatureProvider {
+public class ModConfiguredFeatureProvider {
     public static final ResourceKey<ConfiguredFeature<?, ?>>
             ASTEROID_C_TYPE = key("asteroid_c_type"),
             ASTEROID_S_TYPE_IRON = key("asteroid_s_type_iron"),
@@ -30,7 +30,7 @@ public class AsteroidConfiguredFeatureProvider {
     private static BootstapContext<ConfiguredFeature<?, ?>> context;
 
     static void build(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        AsteroidConfiguredFeatureProvider.context = context;
+        ModConfiguredFeatureProvider.context = context;
 
         asteroid(ASTEROID_C_TYPE, new AsteroidConfiguration(
                 new AsteroidConfiguration.AsteroidBlockSettings(
@@ -51,7 +51,7 @@ public class AsteroidConfiguredFeatureProvider {
     }
 
     private static void asteroid(ResourceKey<ConfiguredFeature<?, ?>> key, AsteroidConfiguration config) {
-        context.register(key, new ConfiguredFeature<>(EtUltra.FEATURE_ASTEROID.get(), config));
+        context.register(key, new ConfiguredFeature<>(EtUltraContent.FEATURE_ASTEROID.get(), config));
     }
 
     private static void asteroidMType(ResourceKey<ConfiguredFeature<?, ?>> key, Block outerCore, Block innerCore) {

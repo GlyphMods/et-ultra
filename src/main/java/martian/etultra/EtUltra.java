@@ -1,19 +1,18 @@
 package martian.etultra;
 
-import martian.etultra.common.worldgen.AsteroidConfiguration;
-import martian.etultra.common.worldgen.AsteroidFeature;
-import martian.etultra.data.PlanetProvider;
-import martian.etultra.data.worldgen.WorldGenProvider;
-import net.minecraft.core.registries.Registries;
+import martian.etultra.data.ModItemModelProvider;
+import martian.etultra.data.ModPlanetProvider;
+import martian.etultra.data.recipe.ModCraftingProvider;
+import martian.etultra.data.worldgen.ModWorldGenProvider;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraftforge.client.event.RegisterItemDecorationsEvent;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,32 +21,35 @@ public class EtUltra {
     public static final String ID = "etultra";
     public static final Logger LOG = LoggerFactory.getLogger(ID);
 
-    public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, ID);
-
-    public static final RegistryObject<AsteroidFeature> FEATURE_ASTEROID = FEATURES.register("asteroid", () -> new AsteroidFeature(AsteroidConfiguration.CODEC));
-
     public EtUltra() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        FEATURES.register(modBus);
+        EtUltraContent.register(modBus);
 
-        modBus.addListener((final FMLCommonSetupEvent event) -> {
-            // common setup
+        modBus.addListener((final FMLClientSetupEvent event) -> {
+            event.enqueueWork(() -> {
+                ItemProperties.register(EtUltraContent.ITEM_OXYGEN_DRILL.get(), id("active"), (stack, level, entity, id) ->
+                    entity != null && entity.isUsingItem() && entity.getUseItem() == stack ? 1f : 0f
+                );
+            });
         });
 
         modBus.addListener((final GatherDataEvent event) -> {
             var generator = event.getGenerator();
             var output = generator.getPackOutput();
+            var efh = event.getExistingFileHelper();
 
-            var planetProvider = new PlanetProvider(output);
+            var planetProvider = new ModPlanetProvider(output);
 
             if (event.includeServer()) {
                 generator.addProvider(true, planetProvider.planetProvider);
-                generator.addProvider(true, new WorldGenProvider(output, event.getLookupProvider()));
+                generator.addProvider(true, new ModWorldGenProvider(output, event.getLookupProvider()));
+                generator.addProvider(true, new ModCraftingProvider(output));
             }
 
             if (event.includeClient()) {
                 generator.addProvider(true, planetProvider.planetRendererProvider);
+                generator.addProvider(true, new ModItemModelProvider(output, efh));
             }
         });
     }

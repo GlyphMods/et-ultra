@@ -13,7 +13,7 @@ import java.util.List;
 
 import static martian.etultra.EtUltra.id;
 
-public class AsteroidPlacedFeatureProvider {
+public class ModPlacedFeatureProvider {
     public static final ResourceKey<PlacedFeature>
             ASTEROID_C_TYPE = key("asteroid_c_type"),
             ASTEROID_S_TYPE_IRON = key("asteroid_s_type_iron"),
@@ -30,14 +30,14 @@ public class AsteroidPlacedFeatureProvider {
     private static HolderGetter<ConfiguredFeature<?, ?>> lookup;
 
     static void build(BootstapContext<PlacedFeature> context) {
-        AsteroidPlacedFeatureProvider.context = context;
+        ModPlacedFeatureProvider.context = context;
         lookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        asteroid(ASTEROID_C_TYPE, AsteroidConfiguredFeatureProvider.ASTEROID_C_TYPE);
-        asteroid(ASTEROID_S_TYPE_IRON, AsteroidConfiguredFeatureProvider.ASTEROID_S_TYPE_IRON);
-        asteroid(ASTEROID_S_TYPE_COPPER, AsteroidConfiguredFeatureProvider.ASTEROID_S_TYPE_COPPER);
-        asteroid(ASTEROID_S_TYPE_GOLD, AsteroidConfiguredFeatureProvider.ASTEROID_S_TYPE_GOLD);
-        asteroid(ASTEROID_S_TYPE_DIAMOND, AsteroidConfiguredFeatureProvider.ASTEROID_S_TYPE_DIAMOND);
+        asteroid(ASTEROID_C_TYPE, ModConfiguredFeatureProvider.ASTEROID_C_TYPE);
+        asteroid(ASTEROID_S_TYPE_IRON, ModConfiguredFeatureProvider.ASTEROID_S_TYPE_IRON);
+        asteroid(ASTEROID_S_TYPE_COPPER, ModConfiguredFeatureProvider.ASTEROID_S_TYPE_COPPER);
+        asteroid(ASTEROID_S_TYPE_GOLD, ModConfiguredFeatureProvider.ASTEROID_S_TYPE_GOLD);
+        asteroid(ASTEROID_S_TYPE_DIAMOND, ModConfiguredFeatureProvider.ASTEROID_S_TYPE_DIAMOND);
     }
 
     private static void asteroid(ResourceKey<PlacedFeature> placedFeatureKey, ResourceKey<ConfiguredFeature<?, ?>> configuredFeatureKey) {
